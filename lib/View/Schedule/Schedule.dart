@@ -1,15 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pokeka_2/View/Schedule/AddSchedule.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class SchedulePage extends StatefulWidget {
+  const SchedulePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SchedulePage> createState() => _SchedulePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SchedulePageState extends State<SchedulePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +28,10 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
           // フローティングアクションボタンを押された時の処理.
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => ()),
-          // )
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddSchedulePage()),
+          )
         },
         child: Icon(Icons.add_box),
       ),

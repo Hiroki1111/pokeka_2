@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "501119675079",
+    "project_id": "pokeka-2",
+    "storage_bucket": "pokeka-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501119675079:android:d0b85b757b7d28b66f6ce2",
+        "android_client_info": {
+          "package_name": "com.example.pokeka_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501119675079-c9ic7csfi20ch046o23qc04f8fqp8fn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGpq-9aF2W6rukhzFz57-wWu4Pg5jbHDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501119675079-c9ic7csfi20ch046o23qc04f8fqp8fn7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

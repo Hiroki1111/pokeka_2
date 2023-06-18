@@ -3,14 +3,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pokeka_2/View/Graph/AddDeckName.dart';
 
-class BattleRecordPage extends StatefulWidget {
-  const BattleRecordPage({super.key});
+class Graph extends StatefulWidget {
+  const Graph({super.key});
 
   @override
-  State<BattleRecordPage> createState() => _BattleRecordPageState();
+  State<Graph> createState() => _GraphState();
 }
 
-class _BattleRecordPageState extends State<BattleRecordPage> {
+class _GraphState extends State<Graph> {
 
   @override
   Widget build(BuildContext context) {

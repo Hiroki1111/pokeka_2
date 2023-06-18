@@ -40,7 +40,7 @@ class _AddDeckNameState extends State<AddDeckName> {
               Navigator.pop(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => BattleRecordPage()
+                    builder: (context) => Graph()
                 ),
               );
             },

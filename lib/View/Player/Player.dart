@@ -1,14 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pokeka_2/Auth/login.dart';
 
-class PlayerPage extends StatefulWidget {
-  const PlayerPage({super.key});
+class Player extends StatefulWidget {
+  const Player({super.key});
 
   @override
-  State<PlayerPage> createState() => _PlayerPageState();
+  State<Player> createState() => _PlayerState();
 }
 
-class _PlayerPageState extends State<PlayerPage> {
+class _PlayerState extends State<Player> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

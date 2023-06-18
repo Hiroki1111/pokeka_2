@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AddPage extends StatefulWidget {
-  const AddPage({super.key});
+class AddRecord extends StatefulWidget {
+  const AddRecord({super.key});
 
   @override
-  State<AddPage> createState() => _AddPageState();
+  State<AddRecord> createState() => _AddRecordState();
 }
 
-class _AddPageState extends State<AddPage> {
+class _AddRecordState extends State<AddRecord> {
 
   final _deckName = TextEditingController();
   String isSelectedValue1 = '⭕️';

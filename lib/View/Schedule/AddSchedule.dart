@@ -131,7 +131,7 @@ class _AddSchedulePageState extends State<AddSchedulePage> {
               Navigator.pop(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => SchedulePage(),
+                    builder: (context) => Schedule(),
                 ),
               );
             },

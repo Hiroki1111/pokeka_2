@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SchedulePage()));
+                                builder: (context) => Schedule()));
                       } catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('ユーザー登録ができません')));
@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SchedulePage()));
+                                builder: (context) => Schedule()));
                       }
                       // 例外処理
                       catch (e) {

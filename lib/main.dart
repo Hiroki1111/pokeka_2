@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pokeka_2/Auth/login.dart';
+import 'package:pokeka_2/Model/BottomNavigation.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -53,7 +55,7 @@ class App extends StatelessWidget {
         if (snapshot.hasData) {
           // User が null ではない、つまりサインイン済みのホーム画面へ
           // BottomNavigationBarのWidgetを読み込む
-          return MystatefullWidget();
+          return BottomNavigation();
         }
         // ログインページへ
         return LoginPage();

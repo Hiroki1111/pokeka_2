@@ -101,7 +101,11 @@ class _LoginPageState extends State<LoginPage> {
                                 builder: (context) => Schedule()));
                       } catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('ユーザー登録ができません')));
+                            const SnackBar(
+                              content: Text('ユーザー登録ができません'),
+                              backgroundColor: Colors.red,
+                            )
+                        );
                         print(e);
                       }
                     },

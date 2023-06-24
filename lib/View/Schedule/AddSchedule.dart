@@ -128,10 +128,25 @@ class _AddSchedulePageState extends State<AddSchedulePage> {
                 ElevatedButton.icon(
                   onPressed: () async {
                     try {
-                      await model.addSchedule();
-                      FirebaseFirestore.instance.collection('Users')
-                          .doc(model.uid).collection('schedule')
-                          .add({'date': _date});
+                      Future addSchedule() async {
+
+                        if (model.tournamentName == null || model.tournamentName!.isEmpty) {
+                          throw '大会名が入力されていません';
+                        }
+
+                        if (model.memo == null || model.memo!.isEmpty) {
+                          throw '詳細が入力されていません';
+                        }
+
+                        // 前のif文を突破するとfirestoreに追加
+                        await FirebaseFirestore.instance.collection('Users').doc(model.uid)
+                            .collection('schedule').add({
+                          'tournamentName': model.tournamentName,
+                          'memo': model.memo,
+                          'date': _date,
+                        });
+                      }
+                      await addSchedule();
                     } catch(e) {
                       final snacBar = SnackBar(
                         backgroundColor: Colors.red,

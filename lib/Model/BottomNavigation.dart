@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokeka_2/View/Graph/Graph.dart';
-import 'package:pokeka_2/View/Player/Player.dart';
-import 'package:pokeka_2/View/Record/AddRecord.dart';
-import 'package:pokeka_2/View/Schedule/Schedule.dart';
+import 'package:pokeka_2/Graph/Graph.dart';
+import 'package:pokeka_2/Player/Player.dart';
+import 'package:pokeka_2/Record/AddRecord.dart';
+import 'package:pokeka_2/Schedule/Schedule.dart';
 
 
 class BottomNavigation extends StatefulWidget {

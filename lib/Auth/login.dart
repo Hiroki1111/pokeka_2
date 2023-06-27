@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pokeka_2/View/Schedule/Schedule.dart';
+import 'package:pokeka_2/Schedule/Schedule.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

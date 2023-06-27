@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pokeka_2/View/Graph/AddDeckName.dart';
+import 'package:pokeka_2/Graph/AddDeckName.dart';
+import 'package:pokeka_2/Graph/ViewGraph.dart';
 
 class Graph extends StatefulWidget {
   const Graph({super.key});
@@ -44,9 +45,14 @@ class _GraphState extends State<Graph> {
                       // onTap: ,
                       trailing: IconButton(
                         onPressed: () {
-                          // Navigator.push(, route)
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewGraph(),
+                            )
+                          );
                         },
-                        icon: Icon(Icons.add_box),
+                        icon: Icon(Icons.auto_graph),
                       ),
                       title: Text('${data['DeckName']}'),
                     ),
@@ -63,7 +69,7 @@ class _GraphState extends State<Graph> {
                             builder: (context) => AddDeckName())
                     );
                   },
-                  icon: Icon(Icons.post_add), //アイコン
+                  icon: Icon(Icons.add_box), //アイコン
                   label: Text('追加する'), //テキスト
                 ),
               ),

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../Domain/schedule.dart';
+import '../Domain/schedule.dart';
 
 class EditScheduleModel extends ChangeNotifier {
   final DomainSchedule schedule;

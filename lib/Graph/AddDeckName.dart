@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pokeka_2/View/Graph/Graph.dart';
+import 'package:pokeka_2/Graph/Graph.dart';
 
 class AddDeckName extends StatefulWidget {
   const AddDeckName({super.key});

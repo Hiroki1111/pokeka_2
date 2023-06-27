@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokeka_2/Domain/schedule.dart';
-import 'package:pokeka_2/Model/Schedule/ScheduleModel.dart';
-import 'package:pokeka_2/View/Schedule/AddSchedule.dart';
-import 'package:pokeka_2/View/Schedule/EditSchedule.dart';
+import 'package:pokeka_2/AddSchedule/AddSchedule.dart';
+import 'package:pokeka_2/EditSchedule/EditSchedule.dart';
+import 'package:pokeka_2/Schedule/ScheduleModel.dart';
 import 'package:provider/provider.dart';
 
 

@@ -76,7 +76,7 @@ class _EditSchedulePageState extends State<EditSchedulePage> {
                               onPressed: () {
                                 _selectDate(context);
                               },
-                              icon: Icon(Icons.date_range)
+                              icon: Icon(Icons.date_range),
                           ),
                         ],
                       ),
@@ -101,6 +101,7 @@ class _EditSchedulePageState extends State<EditSchedulePage> {
                           ),
                           onChanged: (text) {
                             model.tournamentName = text;
+                            model.setTournamentName(text);
                           },
                         ),
                       ),
@@ -124,6 +125,7 @@ class _EditSchedulePageState extends State<EditSchedulePage> {
                         ),
                         onChanged: (text) {
                           model.memo = text;
+                          model.setMemo(text);
                         },
                       ),
                     ),
@@ -135,27 +137,23 @@ class _EditSchedulePageState extends State<EditSchedulePage> {
                   children: [
                     // 更新ボタン
                     ElevatedButton.icon(
-                      onPressed: () async {
+                      // 値が更新されなかったらボタンが押せない
+                      onPressed: model.isUpdated() ? () async {
                         try {
                           Future addSchedule() async {
+                            model.tournamentName = model.tournamentNameController.text;
+                            model.memo = model.memoController.text;
 
-                            if (model.tournamentName == null || model.tournamentName!.isEmpty) {
-                              throw '大会名が入力されていません';
-                            }
-
-                            if (model.memo == null || model.memo!.isEmpty) {
-                              throw '詳細が入力されていません';
-                            }
-
-                            // 前のif文を突破するとfirestoreに追加
+                            // firestoreのデータを更新
                             await FirebaseFirestore.instance.collection('Users').doc(model.uid)
-                                .collection('schedule').add({
+                                .collection('schedule').doc(widget.schedule.id).update({
                               'tournamentName': model.tournamentName,
                               'memo': model.memo,
                               'date': _date,
                             });
                           }
                           await addSchedule();
+                          Navigator.of(context).pop();
                         } catch(e) {
                           final snacBar = SnackBar(
                             backgroundColor: Colors.red,
@@ -163,13 +161,7 @@ class _EditSchedulePageState extends State<EditSchedulePage> {
                           );
                           ScaffoldMessenger.of(context).showSnackBar(snacBar);
                         }
-                        Navigator.pop(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Schedule(),
-                          ),
-                        );
-                      },
+                      } : null,
                       icon: Icon(Icons.edit_calendar), //アイコン
                       label: Text('更新する'), //テキスト
                     ),
@@ -178,22 +170,12 @@ class _EditSchedulePageState extends State<EditSchedulePage> {
                       onPressed: () async {
                         try {
                           Future addSchedule() async {
-
-                            if (model.tournamentName == null || model.tournamentName!.isEmpty) {
-                              throw '大会名が入力されていません';
-                            }
-
-                            if (model.memo == null || model.memo!.isEmpty) {
-                              throw '詳細が入力されていません';
-                            }
+                            model.tournamentName = model.tournamentNameController.text;
+                            model.memo = model.memoController.text;
 
                             // 前のif文を突破するとfirestoreに追加
                             await FirebaseFirestore.instance.collection('Users').doc(model.uid)
-                                .collection('schedule').add({
-                              'tournamentName': model.tournamentName,
-                              'memo': model.memo,
-                              'date': _date,
-                            });
+                                .collection('schedule').doc(widget.schedule.id).delete();
                           }
                           await addSchedule();
                         } catch(e) {

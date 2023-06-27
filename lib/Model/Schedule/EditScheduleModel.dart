@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -18,21 +17,20 @@ class EditScheduleModel extends ChangeNotifier {
   String? memo;
   final uid = FirebaseAuth.instance.currentUser?.uid.toString();
 
-  Future update() async {
+  // 大会名or詳細が変更されたら更新される
+  bool isUpdated() {
+    return tournamentName != null || memo != null;
+  }
 
-    if (tournamentName == null || tournamentName!.isEmpty) {
-      throw '大会名が入力されていません';
-    }
+  // 大会名の値を更新
+  void setTournamentName(String tournamentName) {
+    this.tournamentName = tournamentName;
+    notifyListeners();
+  }
 
-    if (memo == null || memo!.isEmpty) {
-      throw '詳細が入力されていません';
-    }
-
-    // 前のif文を突破するとfirestoreに追加
-    await FirebaseFirestore.instance.collection('Users').doc(uid)
-        .collection('schedule').add({
-      'tournamentName': tournamentName,
-      'memo': memo,
-    });
+  // 詳細の値を更新
+  void setMemo(String memo) {
+    this.memo = memo;
+    notifyListeners();
   }
 }

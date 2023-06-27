@@ -137,7 +137,11 @@ class _LoginPageState extends State<LoginPage> {
                       catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           // snackbarでログインができなかったことを知らせる
-                            const SnackBar(content: Text('ログインができませんでした'),));
+                            const SnackBar(
+                              content: Text('ログインができませんでした'),
+                              backgroundColor: Colors.red,
+                            ),
+                        );
                       }
                     },
                   ),

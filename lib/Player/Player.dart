@@ -15,6 +15,7 @@ class _PlayerState extends State<Player> {
     return Scaffold(
       appBar: AppBar(
         title: Text('プレイヤーページ'),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () async {

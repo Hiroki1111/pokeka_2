@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokeka_2/Graph/Graph.dart';
 import 'package:pokeka_2/Player/Player.dart';
-import 'package:pokeka_2/Record/AddRecord.dart';
 import 'package:pokeka_2/Schedule/Schedule.dart';
 
 
@@ -15,7 +14,6 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   static const _screens = [
     Schedule(),
-    AddRecord(),
     Graph(),
     Player(),
   ];
@@ -38,8 +36,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.event_note), label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.note_add_outlined), label: ""),
           BottomNavigationBarItem(
               icon: Icon(Icons.bar_chart), label: ""),
           BottomNavigationBarItem(

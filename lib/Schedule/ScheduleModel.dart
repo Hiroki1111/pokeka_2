@@ -14,7 +14,6 @@ class ScheduleModel extends ChangeNotifier {
       schedule.listen((QuerySnapshot snapshot) {
       final List<DomainSchedule> schedules = snapshot.docs.map((DocumentSnapshot document) {
         Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-        // final String id = data['id'];
         final String tournamentName = data['tournamentName'];
         final String memo = data['memo'];
         final String id = document.id;

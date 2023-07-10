@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:pokeka_2/AddSchedule/AddSchedule.dart';
 import 'package:pokeka_2/AddSchedule/AddScheduleModel.dart';
 import 'package:pokeka_2/Schedule/Schedule.dart';
 import 'package:provider/provider.dart';
